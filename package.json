@@ -1,0 +1,61 @@
+{
+  "name": "dsh-sidebar-dnd",
+  "version": "0.1.0",
+  "description": "Drag-and-drop @file mentions from the built-in Workspace Files sidebar rows into the DeepSeek Harness chat composer.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek",
+    "sidebar",
+    "file-tree",
+    "drag-and-drop",
+    "file-reference"
+  ],
+  "author": "Luferau",
+  "license": "MIT",
+  "homepage": "https://github.com/luferau/dsh-sidebar-dnd#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luferau/dsh-sidebar-dnd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luferau/dsh-sidebar-dnd/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-client-locale": ">=0.2.0-rc.2"
+  },
+  "scripts": {
+    "check": "node --check lib/client.js && node --check lib/index.js",
+    "test": "node --test test/logic.test.mjs",
+    "prepack": "npm run check && npm test"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-locale"
+      ],
+      "platform": "web"
+    }
+  }
+}

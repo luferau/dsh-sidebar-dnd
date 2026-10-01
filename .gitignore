@@ -1,0 +1,10 @@
+# Dependencies (this package has none, but the profile link may create one)
+node_modules/
+
+# npm pack output
+*.tgz
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+*.log

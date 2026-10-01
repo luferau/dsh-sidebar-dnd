@@ -1,0 +1,4 @@
+# Normalise line endings so every clone and every npm tarball matches.
+* text=auto eol=lf
+*.png binary
+*.jpg binary

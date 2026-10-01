@@ -1,0 +1,5 @@
+# dsh-sidebar-dnd — bundle layer: mounts the (host-side no-op) Cordis row.
+# The browser half ships through package.json's `dsh.client` declaration.
+- insert:
+    - id: sidebar-dnd
+      name: dsh-sidebar-dnd
